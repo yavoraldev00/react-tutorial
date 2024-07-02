@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -13,9 +13,18 @@ const Home = () => {
         setBlogs(newBlogs);
     }
 
+    const [name, setName] = useState("mario");
+
+    useEffect(() => {
+        console.log("useEffect triggered!");
+        console.log(name)
+    }, [name]) // tirggers only when watched value "name" is changed
+
     return ( 
         <div className="home">
             <BlogList blogs = {blogs} title = "Blogs" handleDelete = {handleDelete}/>
+            <button onClick={() => {setName("luigi")}}>Change Name</button>
+            <p>{ name }</p>
         </div>
      );
 }
