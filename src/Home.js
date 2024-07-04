@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([
-        { title: "My new website", body: "lorem ipsum...", author: "mario", id: 1},
-        { title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2},
-        { title: "Web dev top tips", body: "lorem ipsum...", author: "luigi", id: 3},
-    ]);
+    const [blogs, setBlogs] = useState(null);
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
@@ -16,13 +12,18 @@ const Home = () => {
     const [name, setName] = useState("mario");
 
     useEffect(() => {
-        console.log("useEffect triggered!");
-        console.log(name)
-    }, [name]) // tirggers only when watched value "name" is changed
+        fetch("http://localhost:8000/blogs") // fetch request to server
+        .then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data);
+            setBlogs(data);
+        })
+    }, []) // tirggers only on first build
 
     return ( 
         <div className="home">
-            <BlogList blogs = {blogs} title = "Blogs" handleDelete = {handleDelete}/>
+            {blogs && <BlogList blogs = {blogs} title = "Blogs" handleDelete = {handleDelete}/> /* conditional templating */}
             <button onClick={() => {setName("luigi")}}>Change Name</button>
             <p>{ name }</p>
         </div>

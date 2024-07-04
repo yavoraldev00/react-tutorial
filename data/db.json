@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "My First Blog?",
+            "body": "Wny do we use it?\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut amet sequi sit culpa voluptatem! Assumenda tempore nobis inventore repellat repellendus quaerat? Provident, illo debitis. Possimus recusandae velit dicta maxime repellat veritatis ut, dolorem iure in alias quos vitae expedita numquam itaque, dolor, officia cum vel accusamus atque earum provident necessitatibus?",
+            "author": "Mario",
+            "id": 1
+        },
+        {
+            "title": "Opening Party!",
+            "body": "Wny do we use it?\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut amet sequi sit culpa voluptatem! Assumenda tempore nobis inventore repellat repellendus quaerat? Provident, illo debitis. Possimus recusandae velit dicta maxime repellat veritatis ut, dolorem iure in alias quos vitae expedita numquam itaque, dolor, officia cum vel accusamus atque earum provident necessitatibus?",
+            "author": "Yoshi",
+            "id": 2
+        }
+    ]
+}
