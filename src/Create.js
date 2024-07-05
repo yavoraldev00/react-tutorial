@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"; // used for history control / navigation
 
 const Create = () => {
     const [title, setTitle] = useState("");
@@ -21,7 +21,7 @@ const Create = () => {
         }).then(() => {
             console.log("new blog added");
             setIsPending(false);
-            history.push("/");
+            history.push("/"); // navigates to main page
         })
     }
 
